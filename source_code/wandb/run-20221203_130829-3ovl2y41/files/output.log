@@ -1,0 +1,22 @@
+Number of epochs to train  300 gpu0
+Start Train Script
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets
+Traceback (most recent call last):
+  File "patch_classifiers/multimag_train.py", line 74, in <module>
+    mdlParams_data = data_cfg.init(mdlParams)
+  File "/home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/cfgs/10CV.py", line 63, in init
+    read_data.load_image_path(path_init= mdlParams_['meta_data'], data_Dir= mdlParams_['data_dir'], mdlParams = mdlParams)
+  File "/home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/read_data_mol.py", line 95, in load_image_path
+    loadParams['location'].append(df.loc[df['WSI2'].str.contains(img_name)==True, 'OP-Ort/ Diagnose-Ort'].iloc[0])
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pandas/core/ops/common.py", line 69, in new_method
+    return method(self, other)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pandas/core/arraylike.py", line 32, in __eq__
+    return self._cmp_method(other, operator.eq)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pandas/core/series.py", line 5504, in _cmp_method
+    return self._construct_result(res_values, name=res_name)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pandas/core/series.py", line 2945, in _construct_result
+    out = self._constructor(result, index=self.index)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pandas/core/series.py", line 389, in __init__
+    elif isinstance(data, np.ndarray):
+KeyboardInterrupt

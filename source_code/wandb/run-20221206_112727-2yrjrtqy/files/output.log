@@ -1,0 +1,229 @@
+Number of epochs to train  1 gpu0
+Start Train Script
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/4000
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+After Split Config
+Checking for GPU
+True
+ USING GPUs [0]
+Evaluating on validation set during training.
+Loaded pretrained weights for efficientnet-b0
+Loaded pretrained weights for efficientnet-b5
+print the devices cuda:0
+cuda:0
+Loading old model
+Load old 1
+Current class weights [1.57446809 2.74074074]
+Current class weights with extra [1.57446809 2.74074074]
+Dataset Train 148ta: |█████████████████████████████████████████████████-| 99.3% Complete
+Dataset Val 344
+**** Batch Size ;;: 10 [0]
+Recieved Model1
+The Model is  efficientnet_b0
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+******---*** MODEL LOADED TO GPU/CPU *****---***
+Train all Weights
+Number of training Parameters 4666495
+model_type efficientnet_b0
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Epoch 0:   0%|                                                                                                                                                        | 0/14 [00:00<?, ?it/s]
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:616: UserWarning: Checkpoint directory /home/Mukherjee/ProjectFiles/MasterProject/Base/models/_Experiment_Name_s2new/CVSet0 exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name | Type | Params
+------------------------------
+------------------------------
+0         Trainable params
+0         Non-trainable params
+0         Total params
+Epoch 0:   0%|                                                                                                                                                        | 0/14 [00:00<?, ?it/s]11  tensor([[0.6201, 0.5960]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7041, 0.7123]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6400, 0.8869]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8206, 0.6556]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4107, 0.6720]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5905, 0.6874]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5068, 0.8475]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5750, 0.5264]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8392, 0.1113]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3531, 0.7152]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0138, -0.0219,  ..., -0.0225, -0.0184,  0.0053],
+        [ 0.0168, -0.0031, -0.0109,  ...,  0.0014, -0.0162, -0.0027]],
+       device='cuda:0', requires_grad=True)
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:233: UserWarning: You called `self.log('ensemble_count', ...)` in your `training_step` but the value needs to be floating point. Converting it to torch.float32.
+  f"You called `self.log({self.meta.name!r}, ...)` in your `{self.meta.fx}` but the value needs to"
+Epoch 0:   7%|████████▋                                                                                                                 | 1/14 [00:17<03:47, 17.49s/it, loss=0.769, v_num=54]11  tensor([[0.7032, 0.3800]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7277, 0.6604]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7532, 0.7223]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5797, 0.4512]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5795, 0.8823]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5803, 0.6322]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.2106, 0.5022]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3421, 0.8773]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5357, 0.4083]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6271, 0.8077]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0137, -0.0220,  ..., -0.0226, -0.0185,  0.0054],
+        [ 0.0169, -0.0032, -0.0108,  ...,  0.0015, -0.0161, -0.0028]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  14%|█████████████████▍                                                                                                        | 2/14 [00:18<01:51,  9.25s/it, loss=0.714, v_num=54]11  tensor([[0.7889, 0.9537]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7035, 0.6414]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9076, 0.6366]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6600, 0.2831]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4388, 0.2238]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.2598, 0.5778]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.1362, 0.3785]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5851, 0.3367]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8193, 0.6388]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5245, 0.8018]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0137, -0.0220,  ..., -0.0227, -0.0186,  0.0054],
+        [ 0.0170, -0.0031, -0.0107,  ...,  0.0016, -0.0160, -0.0028]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  21%|██████████████████████████▏                                                                                               | 3/14 [00:19<01:11,  6.51s/it, loss=0.697, v_num=54]11  tensor([[0.9681, 0.8048]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9277, 0.4728]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5484, 0.8241]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6838, 0.2166]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6489, 0.5578]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4633, 0.5083]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4691, 0.3043]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5926, 0.5785]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.2384, 0.3385]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8172, 0.3586]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0138, -0.0221,  ..., -0.0228, -0.0186,  0.0054],
+        [ 0.0171, -0.0031, -0.0107,  ...,  0.0016, -0.0159, -0.0028]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  29%|██████████████████████████████████▊                                                                                       | 4/14 [00:20<00:51,  5.11s/it, loss=0.705, v_num=54]11  tensor([[0.8190, 0.7869]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8665, 0.3380]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6529, 0.2965]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5204, 0.3519]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6799, 0.8038]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9416, 0.7114]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5890, 0.6044]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5276, 0.8867]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6180, 0.6153]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4341, 0.6461]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0138, -0.0222,  ..., -0.0228, -0.0186,  0.0054],
+        [ 0.0171, -0.0031, -0.0107,  ...,  0.0016, -0.0160, -0.0028]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  36%|███████████████████████████████████████████▌                                                                              | 5/14 [00:30<00:55,  6.18s/it, loss=0.717, v_num=54]11  tensor([[0.7102, 0.5186]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6669, 0.9584]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6335, 0.5639]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7119, 0.4943]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8361, 0.7131]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4498, 0.2061]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5766, 0.3488]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7573, 0.5695]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7821, 0.6248]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8484, 0.6304]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0138, -0.0222,  ..., -0.0228, -0.0186,  0.0055],
+        [ 0.0171, -0.0032, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  43%|████████████████████████████████████████████████████▎                                                                     | 6/14 [00:31<00:42,  5.29s/it, loss=0.717, v_num=54]11  tensor([[0.6735, 0.5503]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7727, 0.7716]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4722, 0.4813]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4611, 0.4003]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8382, 0.3189]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7910, 0.6168]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7080, 0.7229]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8042, 0.2835]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3334, 0.7204]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6645, 0.7185]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0137, -0.0222,  ..., -0.0228, -0.0186,  0.0055],
+        [ 0.0170, -0.0032, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  50%|█████████████████████████████████████████████████████████████                                                             | 7/14 [00:32<00:32,  4.67s/it, loss=0.712, v_num=54]11  tensor([[0.5051, 0.2097]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.2886, 0.6252]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6240, 0.7656]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5667, 0.4784]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5293, 0.3154]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8047, 0.6840]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7311, 0.8665]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9018, 0.6206]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8551, 0.6750]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5042, 0.7279]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0137, -0.0222,  ..., -0.0228, -0.0186,  0.0055],
+        [ 0.0170, -0.0033, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  57%|█████████████████████████████████████████████████████████████████████▋                                                    | 8/14 [00:33<00:25,  4.19s/it, loss=0.705, v_num=54]11  tensor([[0.4729, 0.3035]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4883, 0.6126]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9366, 0.5419]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6236, 0.4745]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4155, 0.1314]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8940, 0.5173]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3230, 0.5906]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7040, 0.3551]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6862, 0.8035]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8603, 0.8851]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0099, -0.0137, -0.0222,  ..., -0.0228, -0.0186,  0.0055],
+        [ 0.0171, -0.0033, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  64%|██████████████████████████████████████████████████████████████████████████████▍                                           | 9/14 [00:43<00:24,  4.88s/it, loss=0.692, v_num=54]11  tensor([[0.6876, 0.8098]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5280, 0.7805]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5810, 0.8881]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5719, 0.6546]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5187, 0.2424]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8928, 0.7531]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8901, 0.8494]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7753, 0.3114]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3728, 0.8187]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7136, 0.4346]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0137, -0.0222,  ..., -0.0228, -0.0186,  0.0055],
+        [ 0.0171, -0.0033, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  71%|██████████████████████████████████████████████████████████████████████████████████████▍                                  | 10/14 [00:44<00:17,  4.48s/it, loss=0.685, v_num=54]11  tensor([[0.7371, 0.4019]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8687, 0.3863]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4819, 0.7036]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5396, 0.2786]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.3832, 0.8999]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.8926, 0.7118]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5450, 0.5594]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7161, 0.6631]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6144, 0.8002]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.9102, 0.0479]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0137, -0.0223,  ..., -0.0229, -0.0187,  0.0055],
+        [ 0.0172, -0.0033, -0.0107,  ...,  0.0016, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  79%|███████████████████████████████████████████████████████████████████████████████████████████████▊                          | 11/14 [00:45<00:12,  4.12s/it, loss=0.69, v_num=54]11  tensor([[0.5105, 0.4950]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5466, 0.4652]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5024, 0.3649]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.7014, 0.4535]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.5458, 0.7114]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4680, 0.4063]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6001, 0.6871]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4375, 0.8892]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.6449, 0.7725]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+11  tensor([[0.4358, 0.6641]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Layer 0 weights Parameter containing:
+tensor([[-0.0100, -0.0137, -0.0223,  ..., -0.0229, -0.0187,  0.0055],
+        [ 0.0172, -0.0033, -0.0107,  ...,  0.0017, -0.0160, -0.0029]],
+       device='cuda:0', requires_grad=True)
+Epoch 0:  86%|███████████████████████████████████████████████████████████████████████████████████████████████████████▋                 | 12/14 [00:45<00:07,  3.82s/it, loss=0.687, v_num=54]
+Epoch 0: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:53<00:00,  3.81s/it, loss=0.68, v_num=54]11  tensor([[0.5105, 0.4950]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+Epoch 0: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:53<00:00,  3.81s/it, loss=0.68, v_num=54]11  tensor([[0.5105, 0.4950]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])
+`Trainer.fit` stopped: `max_epochs=1` reached.
+Epoch 0: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:53<00:00,  3.81s/it, loss=0.68, v_num=54]11  tensor([[0.5105, 0.4950]], device='cuda:0', grad_fn=<SigmoidBackward0>) torch.Size([1, 2])

@@ -1,0 +1,226 @@
+Start Train Script
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/2000
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+Evaluating on validation set during training.
+Loaded pretrained weights for efficientnet-b0
+Loaded pretrained weights for efficientnet-b5
+print the devices cuda:0
+cuda:0
+Loading old model
+Load old 1
+Dataset Train label <utils_embb_edit.Bockmayr_DataSet object at 0x7f01bc5322d0> Complete
+**** Batch Size ;;: 20 [1]
+-----Combining magnified data------
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/2000
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+trainind 1323
+idx 3oad Train Data: |█████████████████████████████████████████████████-| 99.3% Complete
+Train 2000, torch.Size([1, 3, 224, 224])
+Val 2000, torch.Size([1, 3, 224, 224])
+Train 2000 ID 7
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/4000
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+trainind 1323
+Train 4000, torch.Size([1, 3, 224, 224])███████████████████████████████-| 99.3% Complete
+Val 4000, torch.Size([1, 3, 224, 224])
+Train 4000 ID 2
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/8000
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+trainind 1323
+
+Train 8000, torch.Size([1, 3, 224, 224])███████████████████████████████-| 99.3% Complete
+Val 8000, torch.Size([1, 3, 224, 224])
+Train 8000 ID 8
+-------Concatanation--------
+Train Mag, torch.Size([3, 3, 224, 224]) 148
+Val Mag, torch.Size([3, 3, 224, 224]) 86
+Model Type efficientnet_b0
+Sanity Checking: 0it [00:00, ?it/s]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:616: UserWarning: Checkpoint directory /home/Mukherjee/ProjectFiles/MasterProject/Base/models/_Multimag_Effiatten_RunwithWatch_NoMulticrop_3sidebyside_ReducedLRAddScheduler_YesDropout_Yes	Color_/CVSet0 exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name      | Type             | Params
+-----------------------------------------------
+0 | model     | Eff_attention    | 4.7 M
+1 | criterion | CrossEntropyLoss | 0
+-----------------------------------------------
+4.7 M     Trainable params
+0         Non-trainable params
+4.7 M     Total params
+Sanity Checking DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.35it/s]Batches 5
+[[0. 1.]
+ [0. 1.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]
+ [0. 0.]]
+Val Eval
+Number of Patients: 7
+Number of Patients: 7
+False Patient with ID 102
+Num Patches: 17.0
+--------------------
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/sklearn/metrics/_ranking.py:1001: UndefinedMetricWarning: No positive samples in y_true, true positive value should be meaningless
+  UndefinedMetricWarning,
+Traceback (most recent call last):
+  File "patch_classifiers/multimagV1.py", line 883, in <module>
+    trainer.fit(model = classify_model,train_dataloaders = modelVars['dataloader_trainInd'], val_dataloaders = modelVars['dataloader_valInd'])
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 697, in fit
+    self._fit_impl, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 735, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1166, in _run
+    results = self._run_stage()
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1252, in _run_stage
+    return self._run_train()
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1274, in _run_train
+    self._run_sanity_check()
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1343, in _run_sanity_check
+    val_loop.run()
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/loops/loop.py", line 207, in run
+    output = self.on_run_end()
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 183, in on_run_end
+    self._evaluation_epoch_end(self._outputs)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 293, in _evaluation_epoch_end
+    self.trainer._call_lightning_module_hook(hook_name, output_or_outputs)
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1550, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "patch_classifiers/multimagV1.py", line 289, in validation_epoch_end
+    loss, accuracy, sensitivity, specificity, conf_matrix, f1, auc, waccuracy, predictions, targets, per_example_metrics = utilsMIL.getErrClassification(validation_step_outputs,mdlParams, eval_set)
+  File "/home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/utils_embb_edit.py", line 701, in getErrClassification
+    fpr[i], tpr[i], _ = roc_curve(targets[:, i], predictions[:, i])
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/sklearn/metrics/_ranking.py", line 963, in roc_curve
+    y_true, y_score, pos_label=pos_label, sample_weight=sample_weight
+  File "/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/sklearn/metrics/_ranking.py", line 731, in _binary_clf_curve
+    raise ValueError("{0} format is not supported".format(y_type))
+ValueError: continuous format is not supported
