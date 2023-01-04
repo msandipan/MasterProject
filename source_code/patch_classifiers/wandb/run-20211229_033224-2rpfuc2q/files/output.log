@@ -1,0 +1,35 @@
+The patch is of  4000
+Number of epochs to train  120 gpu3
+Start Train Script
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+------------ Classes -------------
+Number of Unique Patients 175
+Number of patches all 2881
+Label Frequency of patches:  [1684 1197]
+Label Frequency of images given patients:  [116  59]
+Number of different Patients in Data Set 175
+True
+ USING GPUs [3]
+Evaluating on validation set during training.
+Loaded pretrained weights for efficientnet-b0
+Loaded pretrained weights for efficientnet-b5
+print the devices cuda:0
+cuda:0
+Current class weights [1.51886792 2.92727273]
+Current class weights with extra [1.51886792 2.92727273]
+**** Batch Size ;;: 15 [3]█████████████████████████████████████████████-| 99.4% Complete
+The Model is  xcit_medium_24_p16_384_dist
+******---*** MODEL LOADED TO GPU/CPU *****---***
+Train all Weights
+Number of training Parameters 83883778
+Train batches 172
+Start training...
+1
+Start Evaluation
+Val Eval
+Number of Patients: 7
+Number of Patients: 7
+False Patient with ID 256
+Num Patches: 44.0
+--------------------
+1.0 1.0

@@ -1,0 +1,184 @@
+2022-12-04 13:52:15,780 INFO    StreamThr :23844 [internal.py:wandb_internal():91] W&B internal server running at pid: 23844, started at: 2022-12-04 13:52:15.780127
+2022-12-04 13:52:15,794 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: status
+2022-12-04 13:52:15,794 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: status
+2022-12-04 13:52:15,808 DEBUG   SenderThread:23844 [sender.py:send():303] send: header
+2022-12-04 13:52:15,808 INFO    WriterThread:23844 [datastore.py:open_for_write():75] open: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/run-2o501mbv.wandb
+2022-12-04 13:52:15,812 DEBUG   SenderThread:23844 [sender.py:send():303] send: run
+2022-12-04 13:52:16,255 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: check_version
+2022-12-04 13:52:16,255 INFO    SenderThread:23844 [dir_watcher.py:__init__():216] watching files in: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files
+2022-12-04 13:52:16,256 INFO    SenderThread:23844 [sender.py:_start_run_threads():931] run started: 2o501mbv with start time 1670158335.784319
+2022-12-04 13:52:16,256 DEBUG   SenderThread:23844 [sender.py:send():303] send: summary
+2022-12-04 13:52:16,256 INFO    SenderThread:23844 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-04 13:52:16,256 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: check_version
+2022-12-04 13:52:16,388 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: run_start
+2022-12-04 13:52:16,400 DEBUG   HandlerThread:23844 [meta.py:__init__():34] meta init
+2022-12-04 13:52:16,401 DEBUG   HandlerThread:23844 [meta.py:__init__():49] meta init done
+2022-12-04 13:52:16,401 DEBUG   HandlerThread:23844 [meta.py:probe():215] probe
+2022-12-04 13:52:16,412 DEBUG   HandlerThread:23844 [git.py:repo():40] git repository is invalid
+2022-12-04 13:52:16,412 DEBUG   HandlerThread:23844 [meta.py:_save_pip():53] save pip
+2022-12-04 13:52:16,413 DEBUG   HandlerThread:23844 [meta.py:_save_pip():67] save pip done
+2022-12-04 13:52:16,413 DEBUG   HandlerThread:23844 [meta.py:_save_conda():74] save conda
+2022-12-04 13:52:17,251 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_created():275] file/dir created: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/conda-environment.yaml
+2022-12-04 13:52:17,251 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_created():275] file/dir created: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-summary.json
+2022-12-04 13:52:17,251 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_created():275] file/dir created: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/requirements.txt
+2022-12-04 13:52:20,182 DEBUG   HandlerThread:23844 [meta.py:_save_conda():84] save conda done
+2022-12-04 13:52:20,182 DEBUG   HandlerThread:23844 [meta.py:probe():253] probe done
+2022-12-04 13:52:20,226 DEBUG   SenderThread:23844 [sender.py:send():303] send: files
+2022-12-04 13:52:20,226 INFO    SenderThread:23844 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-04 13:52:20,240 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-04 13:52:20,240 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: stop_status
+2022-12-04 13:52:20,252 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/conda-environment.yaml
+2022-12-04 13:52:20,252 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_created():275] file/dir created: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-metadata.json
+2022-12-04 13:52:20,433 DEBUG   SenderThread:23844 [sender.py:send():303] send: telemetry
+2022-12-04 13:52:20,825 INFO    Thread-17 :23844 [upload_job.py:push():143] Uploaded file /tmp/tmpvr_y6cv8wandb/3363wsv6-wandb-metadata.json
+2022-12-04 13:52:21,252 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_created():275] file/dir created: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:23,253 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:30,511 DEBUG   SenderThread:23844 [sender.py:send():303] send: config
+2022-12-04 13:52:31,255 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:33,255 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:35,560 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-04 13:52:35,560 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: stop_status
+2022-12-04 13:52:37,257 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:39,257 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:41,258 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:43,258 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:52:44,646 DEBUG   SenderThread:23844 [sender.py:send():303] send: stats
+2022-12-04 13:52:47,260 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/config.yaml
+2022-12-04 13:52:50,752 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-04 13:52:50,752 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: stop_status
+2022-12-04 13:53:03,529 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:05,197 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:05,265 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:05,520 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:05,811 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:06,272 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-04 13:53:06,272 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: stop_status
+2022-12-04 13:53:07,265 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:14,847 DEBUG   SenderThread:23844 [sender.py:send():303] send: stats
+2022-12-04 13:53:21,484 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-04 13:53:21,484 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: stop_status
+2022-12-04 13:53:23,444 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:23,744 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:24,049 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:24,347 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:25,271 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:27,271 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:34,968 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: partial_history
+2022-12-04 13:53:35,542 DEBUG   SenderThread:23844 [sender.py:send():303] send: exit
+2022-12-04 13:53:35,542 INFO    SenderThread:23844 [sender.py:send_exit():442] handling exit code: 1
+2022-12-04 13:53:35,542 INFO    SenderThread:23844 [sender.py:send_exit():444] handling runtime: 79
+2022-12-04 13:53:35,542 INFO    SenderThread:23844 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-04 13:53:35,542 INFO    SenderThread:23844 [sender.py:send_exit():450] send defer
+2022-12-04 13:53:35,543 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,543 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 0
+2022-12-04 13:53:35,543 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,543 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-04 13:53:35,543 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 1
+2022-12-04 13:53:35,543 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,543 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 1
+2022-12-04 13:53:35,581 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,581 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-04 13:53:35,581 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 2
+2022-12-04 13:53:35,581 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,581 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 2
+2022-12-04 13:53:35,582 DEBUG   SenderThread:23844 [sender.py:send():303] send: stats
+2022-12-04 13:53:35,582 DEBUG   SenderThread:23844 [sender.py:send():303] send: history
+2022-12-04 13:53:35,582 DEBUG   SenderThread:23844 [sender.py:send():303] send: summary
+2022-12-04 13:53:35,583 INFO    SenderThread:23844 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-04 13:53:35,583 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,583 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-04 13:53:35,583 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 3
+2022-12-04 13:53:35,583 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,583 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 3
+2022-12-04 13:53:35,583 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,583 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-04 13:53:35,583 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 4
+2022-12-04 13:53:35,583 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,583 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 4
+2022-12-04 13:53:35,584 DEBUG   SenderThread:23844 [sender.py:send():303] send: summary
+2022-12-04 13:53:35,584 INFO    SenderThread:23844 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-04 13:53:35,584 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,584 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-04 13:53:35,584 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 5
+2022-12-04 13:53:35,584 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,584 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 5
+2022-12-04 13:53:35,584 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,584 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-04 13:53:35,584 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 6
+2022-12-04 13:53:35,584 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:35,585 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 6
+2022-12-04 13:53:35,585 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:35,585 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-04 13:53:36,274 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-summary.json
+2022-12-04 13:53:36,542 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: poll_exit
+2022-12-04 13:53:36,753 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 7
+2022-12-04 13:53:36,753 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: poll_exit
+2022-12-04 13:53:36,754 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:36,754 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 7
+2022-12-04 13:53:36,754 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:36,754 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-04 13:53:36,754 INFO    SenderThread:23844 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-04 13:53:37,274 INFO    Thread-13 :23844 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:37,274 INFO    SenderThread:23844 [dir_watcher.py:finish():392] scan: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/config.yaml config.yaml
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/conda-environment.yaml conda-environment.yaml
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-metadata.json wandb-metadata.json
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log output.log
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/requirements.txt requirements.txt
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [dir_watcher.py:finish():406] scan save: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-summary.json wandb-summary.json
+2022-12-04 13:53:37,275 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 8
+2022-12-04 13:53:37,276 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:37,276 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 8
+2022-12-04 13:53:37,276 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:37,276 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-04 13:53:37,276 INFO    SenderThread:23844 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-04 13:53:37,542 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: poll_exit
+2022-12-04 13:53:37,543 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: poll_exit
+2022-12-04 13:53:37,851 INFO    Thread-21 :23844 [upload_job.py:push():143] Uploaded file /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/requirements.txt
+2022-12-04 13:53:37,875 INFO    Thread-19 :23844 [upload_job.py:push():143] Uploaded file /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/conda-environment.yaml
+2022-12-04 13:53:37,895 INFO    Thread-22 :23844 [upload_job.py:push():143] Uploaded file /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/wandb-summary.json
+2022-12-04 13:53:37,899 INFO    Thread-18 :23844 [upload_job.py:push():143] Uploaded file /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/config.yaml
+2022-12-04 13:53:37,937 INFO    Thread-20 :23844 [upload_job.py:push():143] Uploaded file /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/files/output.log
+2022-12-04 13:53:38,138 INFO    Thread-12 :23844 [sender.py:transition_state():463] send defer: 9
+2022-12-04 13:53:38,138 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:38,138 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 9
+2022-12-04 13:53:38,138 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:38,138 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-04 13:53:38,138 INFO    SenderThread:23844 [file_pusher.py:join():173] waiting for file pusher
+2022-12-04 13:53:38,138 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 10
+2022-12-04 13:53:38,139 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:38,139 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 10
+2022-12-04 13:53:38,139 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:38,139 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-04 13:53:38,543 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: poll_exit
+2022-12-04 13:53:38,615 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 11
+2022-12-04 13:53:38,615 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: poll_exit
+2022-12-04 13:53:38,615 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:38,615 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 11
+2022-12-04 13:53:38,615 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:38,615 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-04 13:53:38,616 INFO    SenderThread:23844 [sender.py:transition_state():463] send defer: 12
+2022-12-04 13:53:38,616 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: defer
+2022-12-04 13:53:38,616 INFO    HandlerThread:23844 [handler.py:handle_request_defer():161] handle defer: 12
+2022-12-04 13:53:38,616 DEBUG   SenderThread:23844 [sender.py:send():303] send: final
+2022-12-04 13:53:38,616 DEBUG   SenderThread:23844 [sender.py:send():303] send: footer
+2022-12-04 13:53:38,616 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: defer
+2022-12-04 13:53:38,616 INFO    SenderThread:23844 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-04 13:53:38,617 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: poll_exit
+2022-12-04 13:53:38,617 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: poll_exit
+2022-12-04 13:53:38,617 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: server_info
+2022-12-04 13:53:38,617 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: get_summary
+2022-12-04 13:53:38,617 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: sampled_history
+2022-12-04 13:53:38,618 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: poll_exit
+2022-12-04 13:53:38,618 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: poll_exit
+2022-12-04 13:53:38,618 DEBUG   SenderThread:23844 [sender.py:send_request():317] send_request: server_info
+2022-12-04 13:53:38,986 INFO    MainThread:23844 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-12-04 13:53:38,986 INFO    MainThread:23844 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-12-04 13:53:38,986 INFO    MainThread:23844 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-12-04 13:53:38,987 DEBUG   HandlerThread:23844 [handler.py:handle_request():138] handle_request: shutdown
+2022-12-04 13:53:38,987 INFO    HandlerThread:23844 [handler.py:finish():814] shutting down handler
+2022-12-04 13:53:39,616 INFO    WriterThread:23844 [datastore.py:close():279] close: /home/Mukherjee/ProjectFiles/MasterProject/source_code/patch_classifiers/wandb/run-20221204_135215-2o501mbv/run-2o501mbv.wandb
+2022-12-04 13:53:39,987 INFO    SenderThread:23844 [sender.py:finish():1331] shutting down sender
+2022-12-04 13:53:39,988 INFO    SenderThread:23844 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-04 13:53:39,988 INFO    SenderThread:23844 [file_pusher.py:join():173] waiting for file pusher
+2022-12-04 13:53:39,990 INFO    MainThread:23844 [internal.py:handle_exit():78] Internal process exited

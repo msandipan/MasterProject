@@ -1,0 +1,76 @@
+2021-12-29 03:32:25,104 INFO    MainThread:1208941 [internal.py:wandb_internal():88] W&B internal server running at pid: 1208941, started at: 2021-12-29 03:32:25.104293
+2021-12-29 03:32:25,105 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: check_version
+2021-12-29 03:32:25,105 INFO    WriterThread:1208941 [datastore.py:open_for_write():80] open: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/run-2rpfuc2q.wandb
+2021-12-29 03:32:25,255 DEBUG   SenderThread:1208941 [git.py:repo():33] git repository is invalid
+2021-12-29 03:32:25,256 DEBUG   SenderThread:1208941 [sender.py:send():179] send: header
+2021-12-29 03:32:25,256 DEBUG   SenderThread:1208941 [sender.py:send_request():193] send_request: check_version
+2021-12-29 03:32:25,380 DEBUG   SenderThread:1208941 [sender.py:send():179] send: run
+2021-12-29 03:32:25,382 DEBUG   SenderThread:1208941 [git.py:repo():33] git repository is invalid
+2021-12-29 03:32:25,582 INFO    SenderThread:1208941 [dir_watcher.py:__init__():168] watching files in: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files
+2021-12-29 03:32:25,582 INFO    SenderThread:1208941 [sender.py:_start_run_threads():716] run started: 2rpfuc2q with start time 1640745144
+2021-12-29 03:32:25,582 DEBUG   SenderThread:1208941 [sender.py:send():179] send: summary
+2021-12-29 03:32:25,583 INFO    SenderThread:1208941 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-12-29 03:32:25,585 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: run_start
+2021-12-29 03:32:25,587 DEBUG   HandlerThread:1208941 [meta.py:__init__():34] meta init
+2021-12-29 03:32:25,587 DEBUG   HandlerThread:1208941 [meta.py:__init__():48] meta init done
+2021-12-29 03:32:25,587 DEBUG   HandlerThread:1208941 [meta.py:probe():205] probe
+2021-12-29 03:32:25,593 DEBUG   HandlerThread:1208941 [git.py:repo():33] git repository is invalid
+2021-12-29 03:32:25,593 DEBUG   HandlerThread:1208941 [meta.py:_save_pip():52] save pip
+2021-12-29 03:32:25,594 DEBUG   HandlerThread:1208941 [meta.py:_save_pip():66] save pip done
+2021-12-29 03:32:25,594 DEBUG   HandlerThread:1208941 [meta.py:_save_conda():73] save conda
+2021-12-29 03:32:26,584 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_created():216] file/dir created: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/requirements.txt
+2021-12-29 03:32:26,584 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_created():216] file/dir created: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/conda-environment.yaml
+2021-12-29 03:32:26,584 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_created():216] file/dir created: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-summary.json
+2021-12-29 03:32:28,067 DEBUG   HandlerThread:1208941 [meta.py:_save_conda():81] save conda done
+2021-12-29 03:32:28,067 DEBUG   HandlerThread:1208941 [meta.py:probe():247] probe done
+2021-12-29 03:32:28,070 DEBUG   SenderThread:1208941 [sender.py:send():179] send: files
+2021-12-29 03:32:28,070 INFO    SenderThread:1208941 [sender.py:_save_file():841] saving file wandb-metadata.json with policy now
+2021-12-29 03:32:28,074 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: stop_status
+2021-12-29 03:32:28,075 DEBUG   SenderThread:1208941 [sender.py:send_request():193] send_request: stop_status
+2021-12-29 03:32:28,583 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/conda-environment.yaml
+2021-12-29 03:32:28,583 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_created():216] file/dir created: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-metadata.json
+2021-12-29 03:32:28,583 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_created():216] file/dir created: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:28,618 INFO    Thread-11 :1208941 [upload_job.py:push():137] Uploaded file /tmp/tmpdg0713l8wandb/1z6yjldw-wandb-metadata.json
+2021-12-29 03:32:30,583 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:35,560 DEBUG   SenderThread:1208941 [sender.py:send():179] send: config
+2021-12-29 03:32:35,585 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:37,586 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:39,586 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:41,587 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:43,254 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: stop_status
+2021-12-29 03:32:43,255 DEBUG   SenderThread:1208941 [sender.py:send_request():193] send_request: stop_status
+2021-12-29 03:32:45,588 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:32:53,849 DEBUG   SenderThread:1208941 [sender.py:send():179] send: stats
+2021-12-29 03:32:56,590 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/config.yaml
+2021-12-29 03:32:58,391 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: stop_status
+2021-12-29 03:32:58,391 DEBUG   SenderThread:1208941 [sender.py:send_request():193] send_request: stop_status
+2021-12-29 03:32:59,591 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:33:13,556 DEBUG   HandlerThread:1208941 [handler.py:handle_request():124] handle_request: stop_status
+2021-12-29 03:33:13,559 DEBUG   SenderThread:1208941 [sender.py:send_request():193] send_request: stop_status
+2021-12-29 03:33:24,123 DEBUG   SenderThread:1208941 [sender.py:send():179] send: stats
+2021-12-29 03:33:27,598 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:33:28,571 WARNING MainThread:1208941 [internal.py:wandb_internal():147] Internal process interrupt: 1
+2021-12-29 03:33:28,581 DEBUG   SenderThread:1208941 [sender.py:send():179] send: history
+2021-12-29 03:33:28,581 DEBUG   SenderThread:1208941 [sender.py:send():179] send: summary
+2021-12-29 03:33:28,582 INFO    SenderThread:1208941 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-12-29 03:33:28,598 INFO    Thread-8  :1208941 [dir_watcher.py:_on_file_modified():229] file/dir modified: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-summary.json
+2021-12-29 03:33:28,799 WARNING MainThread:1208941 [internal.py:wandb_internal():147] Internal process interrupt: 2
+2021-12-29 03:33:28,799 ERROR   MainThread:1208941 [internal.py:wandb_internal():150] Internal process interrupted.
+2021-12-29 03:33:29,581 INFO    WriterThread:1208941 [datastore.py:close():288] close: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/run-2rpfuc2q.wandb
+2021-12-29 03:33:29,582 INFO    SenderThread:1208941 [sender.py:finish():947] shutting down sender
+2021-12-29 03:33:29,582 INFO    SenderThread:1208941 [dir_watcher.py:finish():282] shutting down directory watcher
+2021-12-29 03:33:29,599 INFO    SenderThread:1208941 [dir_watcher.py:finish():312] scan: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files
+2021-12-29 03:33:29,599 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-summary.json wandb-summary.json
+2021-12-29 03:33:29,599 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/config.yaml config.yaml
+2021-12-29 03:33:29,599 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/requirements.txt requirements.txt
+2021-12-29 03:33:29,603 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-metadata.json wandb-metadata.json
+2021-12-29 03:33:29,603 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log output.log
+2021-12-29 03:33:29,606 INFO    SenderThread:1208941 [dir_watcher.py:finish():318] scan save: /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/conda-environment.yaml conda-environment.yaml
+2021-12-29 03:33:29,610 INFO    SenderThread:1208941 [file_pusher.py:finish():177] shutting down file pusher
+2021-12-29 03:33:29,610 INFO    SenderThread:1208941 [file_pusher.py:join():182] waiting for file pusher
+2021-12-29 03:33:30,172 INFO    Thread-14 :1208941 [upload_job.py:push():137] Uploaded file /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/requirements.txt
+2021-12-29 03:33:30,188 INFO    Thread-15 :1208941 [upload_job.py:push():137] Uploaded file /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/output.log
+2021-12-29 03:33:30,197 INFO    Thread-13 :1208941 [upload_job.py:push():137] Uploaded file /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/config.yaml
+2021-12-29 03:33:30,206 INFO    Thread-12 :1208941 [upload_job.py:push():137] Uploaded file /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/wandb-summary.json
+2021-12-29 03:33:30,232 INFO    Thread-16 :1208941 [upload_job.py:push():137] Uploaded file /home/satish/Desktop/Medulloblastoma/source_code/patch_classifiers/wandb/run-20211229_033224-2rpfuc2q/files/conda-environment.yaml
+2021-12-29 03:33:30,951 INFO    MainThread:1208941 [internal.py:handle_exit():78] Internal process exited

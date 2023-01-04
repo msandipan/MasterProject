@@ -1,0 +1,22 @@
+{
+    "os": "Linux-5.11.0-41-generic-x86_64-with-glibc2.10",
+    "python": "3.8.5",
+    "heartbeatAt": "2021-12-29T02:32:25.587582",
+    "startedAt": "2021-12-29T02:32:24.565943",
+    "docker": null,
+    "gpu": "GeForce RTX 3090",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [
+        "gpu3",
+        "120",
+        "task0"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "turing",
+    "username": "satish",
+    "executable": "/home/satish/anaconda3/bin/python3"
+}

@@ -1,0 +1,22 @@
+{
+    "os": "Linux-4.15.0-196-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-12-09T15:33:49.072956",
+    "startedAt": "2022-12-09T15:33:48.441312",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": "10.1.105",
+    "args": [
+        "gpu0",
+        "400",
+        "task0"
+    ],
+    "state": "running",
+    "program": "multimag_train_test.py",
+    "codePath": "multimag_train_test.py",
+    "host": "BOERN-9",
+    "username": "Mukherjee",
+    "executable": "/home/Mukherjee/anaconda3/envs/Mproject/bin/python3"
+}

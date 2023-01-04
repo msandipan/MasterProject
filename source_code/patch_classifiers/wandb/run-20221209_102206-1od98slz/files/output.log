@@ -1,0 +1,166 @@
+Number of epochs to train  1 gpu0
+Start Train Script
+The task:  Histologischer Subtyp  Classes:  ['Klassisch', 'DesmoNodlaer']
+Image path-- /home/Mukherjee/MBlst/new_data_sets/4000
+------------ Classes -------------
+Number of Unique Patients 162
+Number of patches all 2793
+Label Frequency of patches:  [1598 1195]
+Label Frequency of images given patients:  [104  58]
+number of different patietns 162
+Number of different Patients in Data Set 162
+Patient Id [3, 6, 11, 12, 13, 15, 16, 21, 22, 28, 31, 34, 37, 38, 39, 41, 42, 46, 50, 53, 56, 58, 60, 63, 64, 71, 74, 77, 78, 79, 81, 84, 86, 87, 89, 90, 91, 93, 94, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 117, 118, 119, 121, 124, 126, 131, 134, 139, 140, 143, 145, 149, 151, 157, 158, 159, 162, 164, 167, 168, 170, 171, 172, 176, 178, 179, 180, 182, 187, 188, 190, 191, 193, 194, 195, 197, 200, 201, 204, 205, 208, 209, 210, 213, 214, 216, 221, 222, 224, 227, 229, 230, 232, 238, 244, 245, 248, 249, 254, 256, 257, 258, 259, 261, 263, 270, 271, 273, 274, 275, 277, 280, 282, 284, 286, 287, 291, 292, 295, 297, 299, 302, 304, 306, 307, 309, 310, 314, 318, 320, 321, 322, 324, 325, 326, 328, 330, 334, 335, 336, 337, 338, 339, 340, 343, 344, 345, 348, 349, 351] 162
+175
+162
+After Split Config
+Checking for GPU
+True
+ USING GPUs [0]
+Evaluating on validation set during training.
+Loaded pretrained weights for efficientnet-b0
+Loaded pretrained weights for efficientnet-b5
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+print the devices cuda:0
+cuda:0
+Load old 0
+Current class weights [1.57446809 2.74074074]
+Current class weights with extra [1.57446809 2.74074074]
+Dataset Train 148ta: |█████████████████████████████████████████████████-| 99.3% Complete
+Dataset Val 344
+**** Batch Size ;;: 20 [0]
+Recieved Model1
+The Model is  efficientnet_b0
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name  | Type          | Params
+----------------------------------------
+0 | model | Eff_attention | 4.7 M
+----------------------------------------
+658 K     Trainable params
+4.0 M     Non-trainable params
+4.7 M     Total params
+18.666    Total estimated model params size (MB)
+******---*** MODEL LOADED TO GPU/CPU *****---***
+Train all Weights
+Number of training Parameters 658947
+Number of training Parameters 658947
+Epoch 0:   0%|                                                                                                                                                         | 0/7 [00:00<?, ?it/s]batch_idx 0
+idx tensor([ 47, 123,  57,  87,  41,   5,  14, 109, 131,  25,  64, 137, 132,  61,
+          4, 126, 114,  79,  42,  39], device='cuda:0')
+x 20
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:233: UserWarning: You called `self.log('ensemble_count', ...)` in your `training_step` but the value needs to be floating point. Converting it to torch.float32.
+  f"You called `self.log({self.meta.name!r}, ...)` in your `{self.meta.fx}` but the value needs to"
+output length 20
+output tensor([[0.3715, 0.3849],
+        [0.0642, 0.7333],
+        [0.4983, 0.3936],
+        [0.1305, 0.3815],
+        [0.3479, 0.5682],
+        [0.6937, 0.7825],
+        [0.2201, 0.4007],
+        [0.1466, 0.7875],
+        [0.3456, 0.4940],
+        [0.1736, 0.5307],
+        [0.1572, 0.8921],
+        [0.2473, 0.1299],
+        [0.2195, 0.2944],
+        [0.4719, 0.3913],
+        [0.1800, 0.8062],
+        [0.5860, 0.3533],
+        [0.1540, 0.3525],
+        [0.7283, 0.7726],
+        [0.1663, 0.4732],
+        [0.3334, 0.6081]], device='cuda:0', grad_fn=<CatBackward0>)
+labels tensor([0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+       device='cuda:0')
+Epoch 0:  14%|█████████████████▌                                                                                                         | 1/7 [00:17<01:42, 17.11s/it, loss=0.744, v_num=21]batch_idx 1
+idx tensor([ 89,  52,  32,   3,  28,  84, 100,  43,   2,  96,  76,  82,  73, 142,
+         29,   6,  92,  88,  35,   9], device='cuda:0')
+x 20
+output length 20
+output tensor([[0.5693, 0.4153],
+        [0.3652, 0.3131],
+        [0.2868, 0.8251],
+        [0.2243, 0.2600],
+        [0.5819, 0.2257],
+        [0.2668, 0.7815],
+        [0.5619, 0.6839],
+        [0.1008, 0.6750],
+        [0.0910, 0.0875],
+        [0.1967, 0.1580],
+        [0.3758, 0.3861],
+        [0.4280, 0.2571],
+        [0.7652, 0.5958],
+        [0.7673, 0.7781],
+        [0.3934, 0.5709],
+        [0.2687, 0.0484],
+        [0.6303, 0.3750],
+        [0.2868, 0.4969],
+        [0.5723, 0.6526],
+        [0.2783, 0.5317]], device='cuda:0', grad_fn=<CatBackward0>)
+labels tensor([0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0],
+       device='cuda:0')
+Epoch 0:  29%|███████████████████████████████████▏                                                                                       | 2/7 [00:17<00:43,  8.62s/it, loss=0.722, v_num=21]batch_idx 2
+idx tensor([ 49,   8, 124, 122,  72,  71,  98,  48, 113,  15, 147,  77,  54, 107,
+        144,  60,  37, 146,  12,  45], device='cuda:0')
+x 20
+output length 20
+output tensor([[0.3308, 0.8351],
+        [0.5756, 0.4120],
+        [0.5478, 0.6581],
+        [0.0676, 0.8477],
+        [0.1784, 0.3839],
+        [0.2610, 0.2705],
+        [0.4917, 0.7325],
+        [0.4067, 0.4943],
+        [0.1626, 0.7172],
+        [0.5531, 0.1916],
+        [0.1379, 0.4838],
+        [0.2208, 0.4215],
+        [0.2957, 0.3314],
+        [0.0796, 0.4833],
+        [0.3906, 0.0635],
+        [0.3034, 0.5979],
+        [0.2941, 0.2713],
+        [0.2689, 0.3864],
+        [0.3018, 0.1176],
+        [0.4059, 0.7412]], device='cuda:0', grad_fn=<CatBackward0>)
+labels tensor([0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0],
+       device='cuda:0')
+Epoch 0:  43%|████████████████████████████████████████████████████▋                                                                      | 3/7 [00:17<00:23,  5.79s/it, loss=0.728, v_num=21]batch_idx 3
+idx tensor([120, 145, 104,  68,   7, 139,  67,  34,  81,  22,  19, 127,  24,  53,
+        111, 112,  23,  99, 128,  11], device='cuda:0')
+x 20
+output length 20
+output tensor([[0.2435, 0.3200],
+        [0.2548, 0.2344],
+        [0.4750, 0.7329],
+        [0.4724, 0.5210],
+        [0.4524, 0.5104],
+        [0.1641, 0.6799],
+        [0.2541, 0.5729],
+        [0.1533, 0.2019],
+        [0.3079, 0.1352],
+        [0.2919, 0.1707],
+        [0.4124, 0.3953],
+        [0.7438, 0.4622],
+        [0.5216, 0.8032],
+        [0.3677, 0.3835],
+        [0.2045, 0.5372],
+        [0.8313, 0.1929],
+        [0.2609, 0.6855],
+        [0.5081, 0.4548],
+        [0.3218, 0.8473],
+        [0.1069, 0.4114]], device='cuda:0', grad_fn=<CatBackward0>)
+labels tensor([1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0],
+       device='cuda:0')
+Epoch 0:  57%|██████████████████████████████████████████████████████████████████████▎                                                    | 4/7 [00:17<00:13,  4.38s/it, loss=0.726, v_num=21]
+/home/Mukherjee/anaconda3/envs/Mproject/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py:653: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+Epoch 0:  57%|██████████████████████████████████████████████████████████████████████▎                                                    | 4/7 [00:17<00:13,  4.38s/it, loss=0.726, v_num=21]Next Fold......
+Epoch 0:  57%|██████████████████████████████████████████████████████████████████████▎                                                    | 4/7 [00:17<00:13,  4.38s/it, loss=0.726, v_num=21]Next Fold......

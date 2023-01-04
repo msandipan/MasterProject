@@ -1,0 +1,1 @@
+{"loss training": 0.361992210149765, "_timestamp": 1670179485.2312887, "_runtime": 5335.2252995967865, "_step": 100, "loss val": 0.6563209853200025, "accuracy val": 0.7142857142857143, "waccuracy val": [1.0, 0.0], "auc val": 0.7, "sensitivity val": 0.0, "specificity val": 1.0, "f1 val": 0.8333333333333333, "_wandb": {"runtime": 5334}}
