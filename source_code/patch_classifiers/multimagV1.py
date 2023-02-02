@@ -89,8 +89,9 @@ if 'gpu' in gpu_option:
 
 # Define and Initiate WandB
 average_for_patients = False
-util_name = 'AllDatas_Effi_RunwithWatch_NoMulticrop_ReducedLRAddScheduler_YesDropout_Yescolor_NoEarlyStopping'
-#util_name = 'Test'
+#wandb.init()
+#util_name = 'AllDatas_MagEffiNew_RunwithWatch_NoMulticrop_ReducedLRNoScheduler_YesDropout_Yescolor_NoEarlyStopping'
+util_name = 'Test'
 #wandb.init(project="_Digital_Phatology", name = str(sys.argv[1]) + '_epochs_'+ str(number_epochs) + '_avg_' +str(average_for_patients)+util_name)
 wandb_logger = WandbLogger(project="_Digital_Phatology", name = str(mdlParams['numGPUs'] ) + '_epochs_'+ str(number_epochs) + '_avg_' +str(average_for_patients)+util_name)
 
@@ -146,6 +147,8 @@ mdlParams['average_for_patients'] = average_for_patients
 #mdlParams['display_step'] = 300
 
 # Prepare stripped cfg
+
+
 mdlParams_wandb = deepcopy(mdlParams)
 mdlParams_wandb.pop('labels_array',None)
 mdlParams_wandb.pop('im_paths',None)
@@ -163,7 +166,7 @@ mdlParams_wandb.pop('Train_Label_uniqueCV',None)
 mdlParams_wandb.pop('ValInd_ID_uniqueCV',None)
 mdlParams_wandb.pop('TestInd_ID_uniqueCV',None)
 mdlParams_wandb.pop('TrainInd_ID_uniqueCV',None)
-wandb.config.update(mdlParams_wandb)
+wandb.config.update(mdlParams_wandb,allow_val_change = True)
 
 
 
@@ -176,7 +179,7 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
     criterion = Loss function 
 
     '''
-    def __init__(self,model,criterion):
+    def __init__(self,model,criterion,cv):
         super().__init__()       
              
         self.model = model
@@ -184,11 +187,14 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
         #Define Criterion
         self.class_weights = 1.0/np.mean(mdlParams['Train_Label_unique'],axis=0)
         self.criterion = criterion   
+        self.cv = cv
+        wandb.log('Cross Validation fold':self.cv)
 
 
         #Metrics
         self.train_acc = torchmetrics.Accuracy(task="binary")
         self.val_acc = torchmetrics.Accuracy(task="binary")
+        self.test_acc = torchmetrics.Accuracy(task="binary")
         self.aucroc = torchmetrics.AUROC(task="binary")
         self.confmat = torchmetrics.ConfusionMatrix(task="binary")
         self.f1 = torchmetrics.F1Score(task="binary")
@@ -210,13 +216,13 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
         #print('Tar',tar,tar.shape)
 
         train_acc = self.train_acc(preds,tar)
-        print(train_acc)
+        #print(train_acc)
         
         
       
         step = self.current_epoch+1
-        wandb.log({"loss training":loss.cpu().item()},step = step)
-        wandb.log({"acc training":train_acc},step = step)
+        wandb.log({"loss training":loss.cpu().item()},step = step + number_epochs*self.cv)
+        wandb.log({"acc training":train_acc},step = step + number_epochs*self.cv)
         #wandb.log
 
         return loss
@@ -232,9 +238,7 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
             outputs = self.model(inputs.squeeze(0))#.unsqueeze(0)
         else:
             outputs = self.model(inputs.unsqueeze(0))#.unsqueeze(0)
-        #print(outputs)
-        
-        
+        #print(outputs)       
 
         # Loss 
         #print('Outputs',outputs)              
@@ -243,48 +247,74 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
         #Metrics
         preds = modelVars['softmax'](outputs)
         tar = F.one_hot(labels, num_classes=2)
-        print('Predictions and Target',preds,tar)
+        #print('Predictions and Target',preds,tar)
         val_acc = self.val_acc(preds,tar)
         aucroc = self.aucroc(preds,tar)
         #print(aucroc)
         confmat = self.confmat(preds,tar)
-        print('Confusion Matrix',confmat)
+        #print('Confusion Matrix',confmat)
         f1 = self.f1(preds,tar)
         #print(f1)
         
         step = self.current_epoch+1
-        wandb.log({'loss val': loss},step = step)
-        wandb.log({"acc val":val_acc},step = step)
-        wandb.log({'auc val': aucroc},step = step  )       
-        wandb.log({'f1 val': f1},step = step)
+        wandb.log({'loss val': loss},step = step + number_epochs*self.cv)
+        wandb.log({"acc val":val_acc},step = step + number_epochs*self.cv)
+        wandb.log({'auc val': aucroc},step = step + number_epochs*self.cv)       
+        wandb.log({'f1 val': f1},step = step + number_epochs*self.cv)
+        self.log("acc_val",val_acc)
 
 
         #self.log('loss_val',loss)
         #print('Tar',tar)
         #print('Pred',preds)
         return {'val_loss':loss,'preds':preds,'targets':tar}
+    
 
+    def test_step(self,batch,batch_idx):
+        # Get data
+        inputs, labels,idx = batch
+        #print('Lablel Validation',labels,labels[0])
+        # Get outputs
+        if mdlParams['multiple_mag'] == True:
+            outputs = self.model(inputs.squeeze(0))#.unsqueeze(0)
+        else:
+            outputs = self.model(inputs.unsqueeze(0))#.unsqueeze(0)
+        #print(outputs)       
+
+        # Loss 
+        #print('Outputs',outputs)              
+        loss = self.criterion(outputs, labels)#[0].unsqueeze(0))
+
+        #Metrics
+        preds = modelVars['softmax'](outputs)
+        tar = F.one_hot(labels, num_classes=2)
+        #print('Predictions and Target',preds,tar)
+        test_acc = self.test_acc(preds,tar)
+        #print('Test_acc',test_acc)
+        aucroc = self.aucroc(preds,tar)
+        #print('Aucroc',aucroc)
+        confmat = self.confmat(preds,tar)
+        #print('Confusion Matrix',confmat)
+        f1 = self.f1(preds,tar)
+        #print('F1',f1)
         
+        step = self.current_epoch+1
+        wandb.log({'loss test': loss},step = self.cv )
+        wandb.log({"acc test":test_acc},step = self.cv)
+        wandb.log({'auc test': aucroc},step = self.cv)       
+        wandb.log({'f1 test': f1},step = self.cv)
+
+
+        #self.log('loss_val',loss)
+        #print('Tar',tar)
+        #print('Pred',preds)
+        return {'test_loss':loss,'preds':preds,'targets':tar,'acc_val':test_acc,'aucroc':aucroc,'f1':f1}
+
+
+    
         
 
-    #def validation_epoch_end(self,validation_step_outputs):	        
-       
-
-    #    step = self.current_epoch+1
-    #    loss = torch.stack([x['val_loss'] for x in validation_step_outputs]).mean()
-        
-
-
-
-        wandb.log({'Loss val': loss},step = step + cv*(mdlParams['training_steps']))
-    #    wandb.log({'Avg end loss val': avg_loss},step = step + cv*(mdlParams['training_steps']))
-    #    wandb.log({'accuracy val': accuracy},step = step + cv*(mdlParams['training_steps']))
-    #    wandb.log({'waccuracy val': -eval_metric},step = step + cv*(mdlParams['training_steps']))
-    #    wandb.log({'auc val': auc[1]},step = step + cv*(mdlParams['training_steps']) )
-    #    wandb.log({'sensitivity val': sensitivity[1]},step = step + cv*(mdlParams['training_steps']) )
-    #    wandb.log({'specificity val': specificity[1]},step = step + cv*(mdlParams['training_steps']) )
-    #    wandb.log({'f1 val': f1},step = step + cv*(mdlParams['training_steps']) )
-
+    
 
     
 
@@ -297,34 +327,43 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
 
        
 class Effinet(nn.Module):
+    '''
+    model = The base model that will be used fro Transfer Learning
+    batch_size = Size of the Training, Validation  and Test Batches
+    mul_crop = The number of crops from the image used in training
+    out_class = The number of output classes
+    model_ip = The input size of the Transfer learning Model
+    num_gpu = Number of GPUs
+    
+    '''
     def __init__(self,model, batch_size=16, mul_crop=4, out_class=2, model_ip= [456,456,3], num_gpu=1):
         super(Effinet, self).__init__()
         
+        #Model Parameters
         self.D = 512
-        
         self.K = 1
         self.p_drop = mdlParams['p_drop']
         self.batchsize = batch_size
         self.multi_cropval = mul_crop
         self.out_class = out_class
-        
-        if mdlParams['multiple_mag'] == True:
-            self.num_mag = 3  ###ADD THIS TO mdlPARAMS
-        else:
-            self.num_mag = 1
-
         self.printdata = False
         self.network = model
         self.num_gpus = num_gpu
         self.model_ip = model_ip
-        self.L = self.network._fc.in_features
-        #print('L',self.L)
         self.per_partition= int(self.batchsize/self.num_gpus)
+        # Flag to check for Multiple Magnification Evaluation  
+        if mdlParams['multiple_mag'] == True:
+            self.num_mag = 3  ###ADD THIS TO mdlPARAMS
+        else:
+            self.num_mag = 1        
+        
+
+        #Number of outputs from the feedforward layer
+        self.L = self.network._fc.in_features
         self.network._fc = torch.nn.Identity() #nn.Linear(num_ftrs, mdlParams['numClasses']) ###Changed this
         self.network._swish  = torch.nn.Identity()
 
-        #for param in self.network.parameters():
-        #    param.requires_grad = False
+        
         
         self.classifier = nn.Sequential(
             nn.Dropout(self.p_drop),
@@ -365,84 +404,117 @@ class Effinet(nn.Module):
         return C    
 
 
-class Resnet_test(nn.Module):
+class Multimag_effinet(nn.Module):
+    '''
+    model = The base model that will be used fro Transfer Learning
+    batch_size = Size of the Training, Validation  and Test Batches
+    mul_crop = The number of crops from the image used in training
+    out_class = The number of output classes
+    model_ip = The input size of the Transfer learning Model
+    num_gpu = Number of GPUs
+    
+    '''
     def __init__(self,model, batch_size=16, mul_crop=4, out_class=2, model_ip= [456,456,3], num_gpu=1):
-        super(Resnet_test, self).__init__()
+        super(Multimag_effinet, self).__init__()
         
+        #Model Parameters
         self.D = 512
         self.K = 1
-        self.p_drop = 0.2
+        self.p_drop = mdlParams['p_drop']
         self.batchsize = batch_size
         self.multi_cropval = mul_crop
         self.out_class = out_class
-        multimag = False
-        if multimag == True:
-            self.num_mag = 3  ###ADD THIS TO mdlPARAMS
-        else:
-            self.num_mag = 1
         self.printdata = False
         self.network = model
         self.num_gpus = num_gpu
         self.model_ip = model_ip
-        self.L = self.network.fc.in_features
-        #print('L',self.L)
         self.per_partition= int(self.batchsize/self.num_gpus)
-        self.network.fc = torch.nn.Identity() #nn.Linear(num_ftrs, mdlParams['numClasses']) ###Changed this
-        #self.network._fc = nn.Linear(self.L*self.K, self.out_class)
+        # Flag to check for Multiple Magnification Evaluation  
+        if mdlParams['multiple_mag'] == True:
+            self.num_mag = 3  ###ADD THIS TO mdlPARAMS
+        else:
+            self.num_mag = 1        
         
 
-        #for param in self.network.parameters():
-        #    param.requires_grad = False
+        #Number of outputs from the feedforward layer
+        self.L = self.network._fc.in_features
+        self.network._fc = torch.nn.Identity() #nn.Linear(num_ftrs, mdlParams['numClasses']) ###Changed this
+        self.network._swish  = torch.nn.Identity()
+
+        
         
         self.classifier = nn.Sequential(
             nn.Dropout(self.p_drop),
             
-            nn.Linear(self.L*self.K, self.out_class), ## Changed outclass to hidden
-            #nn.Sigmoid()          
+            nn.Linear(self.L*self.K*self.multi_cropval*3, self.out_class), ## Changed outclass to hidden
+            #nn.Sigmoid()
+            #nn.ReLU()          
         )
         
 
-    def forward(self, x):
+    def forward(self, x,y='eval'):
+        #Getting the 3 Values seperated
+        if y == 'eval':
+            x_2000 = x[0:1,:,:,:]   
+            x_4000 = x[1:2,:,:,:] 
+            x_8000 = x[2:3,:,:,:]
+        else:
+            x_2000 = x[:, 0:1,:,:,:]   
+            x_4000 = x[:, 1:2,:,:,:] 
+            x_8000 = x[:, 2:3,:,:,:] 
+
+        #x_2000 = torch.squeeze(x_2000)
+        #x_4000 = torch.squeeze(x_4000)
+        #x_8000 = torch.squeeze(x_8000)
+
         if self.printdata == True:
-            print('X0 ', x.shape) #[20,4,3,244,244]
-
-
-        x = x.reshape(self.per_partition*self.multi_cropval*self.num_mag, self.model_ip[2],self.model_ip[0],self.model_ip[1])
+            print('Input')
+            print('X0 ', x_2000.shape) 
+            print('Reshape', self.per_partition*self.multi_cropval, self.model_ip[2],self.model_ip[0],self.model_ip[1])
+        if y == 'eval':
+            x_2000 = x_2000
+            x_4000 = x_4000
+            x_8000 = x_8000
+        else:
+            x_2000 = x_2000.reshape(self.per_partition*self.multi_cropval, self.model_ip[2],self.model_ip[0],self.model_ip[1])
+            x_4000 = x_4000.reshape(self.per_partition*self.multi_cropval, self.model_ip[2],self.model_ip[0],self.model_ip[1])
+            x_8000 = x_8000.reshape(self.per_partition*self.multi_cropval, self.model_ip[2],self.model_ip[0],self.model_ip[1])
 
         if self.printdata == True:
-            print('X1 ', x.shape) #[80,3,244,244]
+            print('X1 ', x_2000.shape)
        
-        E = self.network(x) #[80,1280]
+        E1 = self.network(x_2000) 
+        E2 = self.network(x_4000)
+        E3 = self.network(x_8000)
         if self.printdata:
-            print('E2', E.shape)
+            print('E2', E1.shape)
+
+
+    
        
-        # [20,4,1280] 
-        #   -> [4,1280] -> [1,1280] 
-        E = E.reshape(self.per_partition,self.multi_cropval*self.num_mag,-1)
+        # [20,4,1280]
+        if y == 'eval':
+           E1 = E1.reshape(1,-1)
+           E2 = E2.reshape(1,-1)
+           E3 = E3.reshape(1,-1) 
+        else: 
+           E1 = E1.reshape(self.per_partition,-1)
+           E2 = E2.reshape(self.per_partition,-1)
+           E3 = E3.reshape(self.per_partition,-1)
         if self.printdata:
-            print('E3', E.shape)
-
-        for i in range (self.per_partition):
-            A = torch.ones(1, self.multi_cropval).to("cuda:0")
-            
-            E_ = torch.mm(A, E[i]) 
-            if self.printdata:
-                print('E4', E_.shape)
-
-            C_ = self.classifier(E_)
-            if i==0:
-                op = C_
-            else:
-                op= torch.cat((op, C_))
-
-
- 
-        C = op
-        #C = self.classifier(E) #[80,2]
+            print('E3', E1.shape)
+        
+        #concat
+        E = torch.cat((E1,E2,E3),1)
         if self.printdata:
-            print('C3', C.shape)  
-        return C      
+            print('E4', E.shape)
 
+
+
+        C = self.classifier(E)
+        return C    
+
+   
 
 
 
@@ -616,15 +688,22 @@ def cv_set(mdlParams,mdlParams_,cv):
 
     
 
-    
+
+   
 
 
 
 # Take care of CV
 def training(mdlParams):
     
+    mdlParams_2000 = {}
+    mdlParams_4000 = {}
+    mdlParams_8000 = {}
+    
+    
     for cv in range(mdlParams['numCV']):
 
+       
         # Check if this fold was already trained
 
         # Reset model graph
@@ -640,7 +719,7 @@ def training(mdlParams):
 
         #config time
         
-        print(wandb.config)
+        #print(wandb.config)
         mdlParams['batchSize'] = wandb.config.batchSize
         mdlParams['learning_rate'] = wandb.config.learning_rate
         mdlParams['p_drop'] = wandb.config.p_drop
@@ -708,14 +787,16 @@ def training(mdlParams):
 
 
         #For Magnified concatenated Data
-        multimag = False
+        #Need to put the output of CV outisde and only define it for the first CV loop and then make use of it for the rest?
+        
         if mdlParams['multiple_mag'] == True:
             print('-----Combining magnified data------')
-            mdlParams_ = mdlParams
-            mdlParams_['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/2000'
-            mdlParams_data = data_cfg.init(mdlParams_)
-            mdlParams_.update(mdlParams_data)        
-            mdlParams_2000 = cv_set(mdlParams,mdlParams_)
+            if cv == 0:
+                mdlParams_2000 = mdlParams
+                mdlParams_2000['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/2000'
+                mdlParams_data = data_cfg.init(mdlParams_2000)
+                mdlParams_2000.update(mdlParams_data)        
+            mdlParams_2000 = cv_set(mdlParams_2000,mdlParams_2000,cv)
             #mdlParams['trainInd'] = mdlParams['trainIndCV']
             print('trainind',mdlParams_2000['trainInd'][0])
             data2000_train = utilsMIL.Bockmayr_DataSet(mdlParams_2000,'trainInd')
@@ -727,12 +808,13 @@ def training(mdlParams):
             print('Val 2000,', data2000_val[0][0].shape)
             print('Train 2000 ID', data2000_train[0][2]) 
             save_image(data2000_train[0][0], '/home/Mukherjee/ProjectFiles/MasterProject/source_code/Images/img1.png')
-        
-            mdlParams_ = mdlParams
-            mdlParams_['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/4000'
-            mdlParams_data = data_cfg.init(mdlParams_)
-            mdlParams_.update(mdlParams_data)        
-            mdlParams_4000 = cv_set(mdlParams,mdlParams_)
+
+            if cv == 0:
+                mdlParams_4000 = mdlParams
+                mdlParams_4000['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/4000'
+                mdlParams_data = data_cfg.init(mdlParams_4000)
+                mdlParams_4000.update(mdlParams_data)        
+            mdlParams_4000 = cv_set(mdlParams_4000,mdlParams_4000,cv)
             #mdlParams['trainInd'] = mdlParams['trainIndCV']
             print('trainind',mdlParams_4000['trainInd'][0])
             data4000_train = utilsMIL.Bockmayr_DataSet(mdlParams_4000,'trainInd')
@@ -743,12 +825,12 @@ def training(mdlParams):
             print('Train 4000 ID', data4000_train[0][2])  
             save_image(data4000_train[0][0], '/home/Mukherjee/ProjectFiles/MasterProject/source_code/Images/img2.png')
 
-
-            mdlParams_ = mdlParams
-            mdlParams_['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/8000'
-            mdlParams_data = data_cfg.init(mdlParams_)
-            mdlParams_.update(mdlParams_data)        
-            mdlParams_8000 = cv_set(mdlParams,mdlParams_)
+            if cv == 0:
+                mdlParams_8000 = mdlParams
+                mdlParams_8000['data_dir'] = '/home/Mukherjee/MBlst/new_data_sets/8000'
+                mdlParams_data = data_cfg.init(mdlParams_8000)
+                mdlParams_8000.update(mdlParams_data)        
+            mdlParams_8000 = cv_set(mdlParams_8000,mdlParams_8000,cv)
             #mdlParams['trainInd'] = mdlParams['trainIndCV']
             print('trainind',mdlParams_8000['trainInd'][0])
             data8000_train = utilsMIL.Bockmayr_DataSet(mdlParams_8000,'trainInd')
@@ -782,8 +864,11 @@ def training(mdlParams):
                 modelVars['dataloader_trainInd'] = DataLoader(dataset_train, batch_size=mdlParams['batchSize'], sampler=strat_sampler, num_workers=num_workers, pin_memory=True, drop_last=True)
             else:
                 modelVars['dataloader_trainInd'] = DataLoader(dataset_train, batch_size=mdlParams['batchSize'], shuffle=True, num_workers=num_workers, pin_memory=True, drop_last=True)
-                
-
+            
+            #for i in modelVars['dataloader_valInd']:
+            #    print('Val shape',i[0].shape)
+            #    sys.exit()  
+            
         # Define softmax
         modelVars['softmax'] = nn.Softmax(dim=1)
     
@@ -792,8 +877,11 @@ def training(mdlParams):
         #Defining Model
         print('Model Type', mdlParams['model_type'])
         if mdlParams['model_type'] == 'efficientnet_b0':
-            model1 = models.getModel(mdlParams['model_type'])()          
-            model = Effinet(model1, mdlParams['batchSize'], mdlParams['multiCropEval'], mdlParams['numClasses'], mdlParams['input_size'], len(mdlParams['numGPUs']))
+            model1 = models.getModel(mdlParams['model_type'])()
+            if mdlParams['multiple_mag'] == True:    
+                model = Multimag_effinet(model1, mdlParams['batchSize'], mdlParams['multiCropEval'], mdlParams['numClasses'], mdlParams['input_size'], len(mdlParams['numGPUs']))     
+            else:
+                model = Effinet(model1, mdlParams['batchSize'], mdlParams['multiCropEval'], mdlParams['numClasses'], mdlParams['input_size'], len(mdlParams['numGPUs']))
         elif mdlParams['model_type'] == 'efficient_notAtten':
             model1 = models.getModel(mdlParams['model_type'])()  
             model = Effinet(model1, mdlParams['batchSize'], mdlParams['multiCropEval'], mdlParams['numClasses'], mdlParams['input_size'], len(mdlParams['numGPUs']))
@@ -816,12 +904,12 @@ def training(mdlParams):
         #modelVars['optimizer'] = optim.Adam(modelVars['model'].parameters(), lr=mdlParams['learning_rate'])
 
         
-        classify_model = Multimag_Classifier(model,modelVars['criterion'])
+        classify_model = Multimag_Classifier(model,modelVars['criterion'],cv)
 
         # Checkpoint
         #checkpoint_earlystopping = EarlyStopping(monitor = 'loss_val', patience = 10, mode = 'min')
         checkpoint_callback_all = ModelCheckpoint(auto_insert_metric_name = True, dirpath = mdlParams['saveDir'], filename='checkpoint-{epoch:02d}')
-        #checpoint_callback_best = ModelCheckpoint(monitor="eval_metric", auto_insert_metric_name = True, dirpath = mdlParams['saveDir'], filename='checkpoint_best-{epoch:02d}')
+        checpoint_callback_best = ModelCheckpoint(monitor="acc_val", auto_insert_metric_name = True, dirpath = mdlParams['saveDir'], filename='checkpoint_best-{epoch:02d}')
         #checkpoint_callback_ensemble = ModelCheckpoint(monitor="ensemble_count", auto_insert_metric_name = True, dirpath = mdlParams['saveDir'], filename='checkpoint-ensemble{epoch:02d}')
         checkpoint_callback_last = ModelCheckpoint(save_last = True, auto_insert_metric_name = True, dirpath = mdlParams['saveDir'], filename='checkpoint-{epoch:02d}')
     
@@ -830,8 +918,9 @@ def training(mdlParams):
 
 
         #Removed Ensemble add it later
-        trainer = Trainer(callbacks =[checkpoint_callback_all,checkpoint_callback_last],max_epochs=mdlParams['training_steps'],accelerator='gpu', devices=1,log_every_n_steps = 1,check_val_every_n_epoch=1,benchmark=True,num_sanity_val_steps=0,logger=wandb_logger) ##Migh improve speed with the addition fo benchmark
-        
+        trainer = Trainer(callbacks =[checkpoint_callback_all,checkpoint_callback_last,checpoint_callback_best],max_epochs=mdlParams['training_steps'],accelerator='gpu', devices=1,log_every_n_steps = 1,check_val_every_n_epoch=1,benchmark=True,num_sanity_val_steps=0,logger=wandb_logger) ##Migh improve speed with the addition fo benchmark
+        #trainer.validate(model = classify_model, dataloaders = modelVars['dataloader_valInd'])
+        #sys.exit()
     
 
         # loading from checkpoint
@@ -858,6 +947,8 @@ def training(mdlParams):
             start_epoch = 1
             mdlParams['lastBestInd'] = -1
             trainer.fit(model = classify_model,train_dataloaders = modelVars['dataloader_trainInd'], val_dataloaders = modelVars['dataloader_valInd'])
+            op = trainer.test(dataloaders = modelVars['dataloader_testInd'])
+            print(op)
             #print('Layer 0 weights', modelVars['model'].classifier[1].weight)
 
             
@@ -868,7 +959,7 @@ def training(mdlParams):
  
     
 if __name__ == '__main__':
-    sweep = True
+    sweep = False
     if sweep == True:
         print('--------Hparameter optimization---------')
         sweep_configuration = {
@@ -884,7 +975,7 @@ if __name__ == '__main__':
         
     
         sweep_id = wandb.sweep(sweep=sweep_configuration, project="_Digital_Phatology")
-        wandb.agent(sweep_id=sweep_id, function=training(mdlParams))
+        wandb.agent(sweep_id=sweep_id,count = 3)
 
     else:
         print('---------Training and Validation----------')
