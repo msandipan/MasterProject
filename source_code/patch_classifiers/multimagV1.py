@@ -188,7 +188,7 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
         self.class_weights = 1.0/np.mean(mdlParams['Train_Label_unique'],axis=0)
         self.criterion = criterion   
         self.cv = cv
-        wandb.log('Cross Validation fold':self.cv)
+        
 
 
         #Metrics
@@ -299,10 +299,11 @@ class Multimag_Classifier(LightningModule):  ## Change name to multimag
         #print('F1',f1)
         
         step = self.current_epoch+1
-        wandb.log({'loss test': loss},step = self.cv )
-        wandb.log({"acc test":test_acc},step = self.cv)
-        wandb.log({'auc test': aucroc},step = self.cv)       
-        wandb.log({'f1 test': f1},step = self.cv)
+        wandb.log({'Cross Validation fold':self.cv})
+        wandb.log({'loss test': loss} )
+        wandb.log({"acc test":test_acc})
+        wandb.log({'auc test': aucroc})       
+        wandb.log({'f1 test': f1})
 
 
         #self.log('loss_val',loss)
